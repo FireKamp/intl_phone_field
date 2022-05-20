@@ -22,6 +22,8 @@ class PickerDialogStyle {
   final EdgeInsets? searchFieldPadding;
 
   final double? width;
+  final double? pickerWidth;
+  final double? pickerHeight;
 
   PickerDialogStyle({
     this.backgroundColor,
@@ -34,6 +36,8 @@ class PickerDialogStyle {
     this.searchFieldInputDecoration,
     this.searchFieldPadding,
     this.width,
+    this.pickerWidth,
+    this.pickerHeight
   });
 }
 
@@ -85,6 +89,8 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
               : defaultHorizontalPadding),
       backgroundColor: widget.style?.backgroundColor,
       child: Container(
+        width: widget.style?.pickerWidth ?? MediaQuery.of(context).size.width,
+        height: widget.style?.pickerHeight ?? MediaQuery.of(context).size.height,
         padding: widget.style?.padding ?? EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
